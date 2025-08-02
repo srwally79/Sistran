@@ -21,7 +21,7 @@ export async function obtenerProductoPorId(id: string): Promise<Producto | undef
 }
 
 export async function obtenerProductosPorCategoria(categoriaId: number): Promise<Producto[]> {
-  const res = await fetch(`http://localhost:5222/api/productos/categoria/${categoriaId}`);
+  const res = await fetch(`${BASE_URL}/productos/categoria/${categoriaId}`);
   if (!res.ok) throw new Error("Error al obtener productos");
   return res.json();
 }
